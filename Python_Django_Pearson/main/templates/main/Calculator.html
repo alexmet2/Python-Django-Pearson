@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+{% block style %}
+@keyframes calc{
+	0% {top:-25%}
+	100% {top:50%}
+}
+.inputs{
+	text-align: center;
+	float:left;
+}
+.Button_Save{
+	text-align: center;
+    text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    padding: 5px;
+    border-radius:25px;
+}
+.Button_Save:hover{
+	background-color:#151B54;
+	color:white;
+}
+.Calc{
+	position: absolute; 
+	left: 50%; 
+	top: 50%;
+	animation-name:calc;
+	animation-duration:3s;
+}
+{% endblock %}
+{% block content%}
+<div class="Calc" style="position: absolute; left: 50%; top: 50%;">
+	<form method="POST", action="add">
+			{% csrf_token %}
+			<div style="text-align: center;">
+				<input type="number" name="NumberX" pattern="[0-9]+">
+				<p>Input a number for X</p>
+			</div>
+		<h1 style="text-align: center;">+</h1>
+			<div style="text-align: center;">
+				<input type="number" name="NumberY" pattern="[0-9]+">
+				<p>Input a number for Y</p>
+			</div>
+		<div style="margin-top: 10px;">
+			<button type="submit", class="Button_Save", name="Save">Do the addition</button>
+		</div>
+	</form>
+</div>
+{% endblock %}

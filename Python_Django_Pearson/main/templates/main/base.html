@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{%  block title %}Calculator{% endblock %}</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		@keyframes sidebar {
+  			0% {width: 0%;}
+  			100% {width: 25%;}
+		}
+		.sidebar{
+			height: 100%;
+			width: 25%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: #151B54;
+			overflow-x: hidden;
+			overflow-y: hidden;
+			float: left;
+			border-right-style: solid;
+			border-right-color: black;
+			display: flex;
+			flex-direction: column;
+			animation-name: sidebar;
+			animation-duration: 3s;
+		}
+		.sidebar a{
+			text-decoration: none;
+			color: white;
+			height: 100%;
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			transition-duration: 0.8s;
+		}
+		.sidebar a:hover{
+			color: #B6B6B4;
+			height: 85%;
+		}
+		.sidebar a:active{
+			color: #6D6968;
+			height: 85%;
+		}
+		{% block style%}
+		{% endblock %}
+	</style>
+</head>
+<body>
+	<div class="sidebar", >
+		<a href="Calculator.html">Calculator</a>
+	</div>
+	<div>
+		{% block content%}
+		{% endblock %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		@keyframes welcome{
+			0% {top: 0%; left: 0%; bottom: 0%; right: 0%;}
+			100%{top: 6%; left: 2%; bottom: 5%; right: 2%;}
+		}
+		.White_Border{
+			margin: auto;
+			background-color: white;
+			border: 2px solid #151B54;
+			border-radius:25px;
+			position: absolute;
+			top: 6%;
+			left: 2%;
+			bottom: 5%;
+			right: 2%;
+			text-align: center;
+			animation-name: welcome;
+			animation-duration: 2s;
+		}
+		.Welcome{
+			text-align:center;
+			color: white;
+		}
+		.Box{
+			width: 25%;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			margin: auto;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.Box1, .Box2,{
+			align-items: center;
+			justify-content: center;
+		}
+		.Box1 a,.Box2 a{
+			display: inline-block;
+			height: 50px;
+			text-decoration: none;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			color: black;
+			transition-duration: 0.6s;
+		}
+		.Box2 a:hover{
+			color: white;
+			border: 2px solid #151B54;
+			border-radius:25px;
+			background-color:#151B54;
+		}
+	</style>
+</head>
+<body style="background-color: #151B54">
+	<div>
+		<h1 class="Welcome">Welcome to the homepage</h1>
+	</div>
+	<div class="White_Border">
+		<div class="Box">
+			<div class="Box1" style="font-size: 13px;">
+				<h1>Click the calculator to begin</h1>
+			</div>
+			<div class="Box2">
+				<b><a href="Calculator.html">Calculator</a></b>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

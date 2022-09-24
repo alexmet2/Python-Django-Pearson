@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block style %}
+	@keyframes result{
+		0% {top:-10%;}
+		100% {top:50%;}
+	}
+	@keyframes bot{
+		0% {bottom:-10%;}
+		100% {bottom:0%;}
+	}
+	.result{
+		position: absolute; 
+		left: 60%; 
+		top: 50%;
+		animation-name:result;
+		animation-duration:3s;
+	}
+	.bottom{
+		position: fixed;
+		height:7%;
+		bottom:0;
+		width:75%;
+		right:0;
+		background-color:#151B54;
+		animation-name:bot;
+		animation-duration:3s;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		color:white;
+		text-align:center;
+	}
+{% endblock %}
+{% block title %}Addition result{% endblock %}
+{% block content%}
+	<div>
+		<h1 class="result">{{result}}</h1>
+	</div>
+	<div>
+		<p class="bottom">Press the Calculator to go back</p>
+	</div>
+{% endblock %}
